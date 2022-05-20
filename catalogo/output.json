@@ -1,0 +1,46 @@
+{
+  "query": "0016-018",
+  "numDataset": "2",
+  "infDatasets": [
+    {
+      "id": "https://datos.madrid.es/egob/catalogo/206974-0-agenda-eventos-culturales-100.json",
+      "num": "5"
+    },
+    {
+      "id": "https://datos.madrid.es/egob/catalogo/300107-0-agenda-actividades-eventos.json",
+      "num": "5"
+    }
+  ],
+  "titles": [
+    {
+      "title": "Antonio Gades. Tierra, mar y fuego"
+    },
+    {
+      "title": "Aprende a bailar Marinera"
+    },
+    {
+      "title": "Caamaño y Amexeiras"
+    },
+    {
+      "title": "Cesc Gelabert… al descubierto"
+    },
+    {
+      "title": "Coco Chanel"
+    },
+    {
+      "title": "Antonio Gades. Tierra, mar y fuego"
+    },
+    {
+      "title": "Aprende a bailar Marinera"
+    },
+    {
+      "title": "Caamaño y Amexeiras"
+    },
+    {
+      "title": "Cesc Gelabert… al descubierto"
+    },
+    {
+      "title": "Cirque du Soleil vuelve al Escenario Puerta del Ángel"
+    }
+  ]
+}
