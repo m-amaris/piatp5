@@ -1,0 +1,214 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<searchResults xmlns="http://www.piat.dte.upm.es/practica4"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.piat.dte.upm.es/practica4 ./ResultadosBusquedaP4.xsd">
+	<summary>
+		<query>0016-018</query>
+		<numConcepts>6</numConcepts>
+		<numDatasets>2</numDatasets>
+	</summary>
+	<results>
+		<concepts>
+			<concept id="https://datos.madrid.es/egob/kos/actividades/DanzaBaile"/>
+			<concept id="https://datos.madrid.es/egob/kos/actividades/DanzaBaile/ClasicaEspanola"/>
+			<concept id="https://datos.madrid.es/egob/kos/actividades/DanzaBaile/ContemporaneaBreakdanceHipHop"/>
+			<concept id="https://datos.madrid.es/egob/kos/actividades/DanzaBaile/Flamenco"/>
+			<concept id="https://datos.madrid.es/egob/kos/actividades/DanzaBaile/FolcloreEtnica"/>
+			<concept id="https://datos.madrid.es/egob/kos/actividades/DanzaBaile/SalonTango"/>
+		</concepts>
+		<datasets>
+			<dataset id="https://datos.madrid.es/egob/catalogo/206974-0-agenda-eventos-culturales-100.json">
+				<title>Actividades Culturales y de Ocio Municipal en los próximos 100 días</title>
+				<description>Relación de actividades de carácter cultural y de ocio, que se van a celebrar en los próximos 100 días y/o que se están celebrando, en centros Municipales . Podrá encontrar así las actividades de Centros Culturales, Socioculturales, Centros Juveniles, Bibliotecas, Centros de Mayores, Museos, Juntas de Distrito, etc. En este Portal, existen otros conjuntos de datos donde puede ver la relación de los diversos centros anteriores. Tenga en cuenta que hay ciertas actividades que aunque son gratuitas , requieren inscripción previa. En el campo 'CONTENT-URL', esta la url donde puede obtener información adicional de la actividad y donde se especifica si se requiere inscripción y como realizarla . Hay otras actividades, que si tienen un coste asociado, igualmente tiene la información en la url anterior. En el apartado 'Documentación asociada', hay un documento con la estructura del fichero y las recomendaciones y/o advertencias, que le permitirá usar y comprender mejor los datos.</description>
+				<theme>http://datos.gob.es/kos/sector-publico/sector/cultura-ocio</theme>
+			</dataset>
+			<dataset id="https://datos.madrid.es/egob/catalogo/300107-0-agenda-actividades-eventos.json">
+				<title>Agenda de actividades y eventos</title>
+				<description>Relación de actividades de distinto tipo que se van a celebrar o que se están celebrando, en centros municipales o asociados la actividad gestionada por el Ayuntamiento. Podrá encontrar así las actividades de Centros Culturales, Socioculturales, Centros Juveniles, Bibliotecas, Centros de Mayores, Museos, Juntas de Distrito, etc. En la columna P del fichero descargable, puede ver en que centro se realiza dicha actividad (puede ser en centros del ayuntamiento o no) No se trata de una relación exhaustiva de toda la actividad del Ayuntamiento de Madrid, sino solamente de aquellos que ya se encuentran incluidos en la página web www.madrid.es . Asi mismo pueden existir eventos, que por motivos de temática, pueden incluso estar duplicados. En este Portal, existen otros conjuntos de datos donde puede ver la relación de los diversos centros anteriores. Tenga en cuenta que hay ciertas actividades que aunque son gratuitas , requieren inscripción previa. En el campo 'CONTENT-URL', esta la url donde puede obtener información adicional de la actividad y donde se especifica si se requiere inscripción y como realizarla . Hay otras actividades, que si tienen un coste asociado, igualmente tiene la información en la url anterior. En la página siguiente tiene un buscador para poder encontrar una actividad en particular. En el apartado 'Documentación asociada', hay un documento con la estructura del fichero y las recomendaciones y/o advertencias, que le permitirá usar y comprender mejor los datos.</description>
+				<theme>http://datos.gob.es/kos/sector-publico/sector/cultura-ocio</theme>
+			</dataset>
+		</datasets>
+		<resources>
+			<resource id="https://datos.madrid.es/egob/catalogo/206974-0-agenda-eventos-culturales-100.json">
+				<concept id="https://datos.madrid.es/egob/kos/actividades/DanzaBaile"/>
+				<link><![CDATA[http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=0e98071c7810f710VgnVCM1000001d4a900aRCRD]]></link>
+				<title>Antonio Gades. Tierra, mar y fuego</title>
+				<location>
+						<eventLocation>Fernán Gómez Centro Cultural de la Villa</eventLocation>
+						<area>https://datos.madrid.es/egob/kos/Provincia/Madrid/Municipio/Madrid/Distrito/Salamanca/Barrio/Recoletos</area>
+						<timetable>
+							<start>2022-04-07 00:00:00.0</start>
+							<end>2022-05-29 23:59:00.0</end></timetable>
+						<georeference>40.424926347610764 -3.6899208519663427</georeference>
+				</location>
+				<organization>
+						<accesibility>1,6</accesibility>
+						<organizationName>Fernán Gómez Centro Cultural de la Villa</organizationName>
+				</organization>
+				<description></description>
+			</resource>
+			<resource id="https://datos.madrid.es/egob/catalogo/206974-0-agenda-eventos-culturales-100.json">
+				<concept id="https://datos.madrid.es/egob/kos/actividades/DanzaBaile"/>
+				<link><![CDATA[http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=8ad33b799879f710VgnVCM1000001d4a900aRCRD]]></link>
+				<title>Aprende a bailar Marinera</title>
+				<location>
+						<eventLocation>Centro Cultural Antonio Machado (San Blas - Canillejas)</eventLocation>
+						<area>https://datos.madrid.es/egob/kos/Provincia/Madrid/Municipio/Madrid/Distrito/SanBlas-Canillejas/Barrio/Arcos</area>
+						<timetable>
+							<start>2022-04-02 00:00:00.0</start>
+							<end>2022-06-25 23:59:00.0</end></timetable>
+						<georeference>40.42027705095574 -3.621741078700336</georeference>
+				</location>
+				<organization>
+						<accesibility>1</accesibility>
+						<organizationName>Centro Cultural Antonio Machado (San Blas - Canillejas)</organizationName>
+				</organization>
+				<description></description>
+			</resource>
+			<resource id="https://datos.madrid.es/egob/catalogo/206974-0-agenda-eventos-culturales-100.json">
+				<concept id="https://datos.madrid.es/egob/kos/actividades/DanzaBaile"/>
+				<link><![CDATA[http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=4865948872400810VgnVCM1000001d4a900aRCRD]]></link>
+				<title>Cesc Gelabert… al descubierto</title>
+				<location>
+						<eventLocation>Espacio Abierto Quinta de los Molinos</eventLocation>
+						<area>https://datos.madrid.es/egob/kos/Provincia/Madrid/Municipio/Madrid/Distrito/SanBlas-Canillejas/Barrio/ElSalvador</area>
+						<timetable>
+							<start>2022-06-04 00:00:00.0</start>
+							<end>2022-06-05 23:59:00.0</end></timetable>
+						<georeference>40.44774002225867 -3.6292874542291638</georeference>
+				</location>
+				<organization>
+						<accesibility>1,6</accesibility>
+						<organizationName>Espacio Abierto Quinta de los Molinos</organizationName>
+				</organization>
+				<description></description>
+			</resource>
+			<resource id="https://datos.madrid.es/egob/catalogo/206974-0-agenda-eventos-culturales-100.json">
+				<concept id="https://datos.madrid.es/egob/kos/actividades/DanzaBaile"/>
+				<link><![CDATA[http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=14d8e7f49e960810VgnVCM2000001f4a900aRCRD]]></link>
+				<title>Coco Chanel</title>
+				<location>
+						<eventLocation>Centro Cultural Eduardo Úrculo (Tetuán)</eventLocation>
+						<area>https://datos.madrid.es/egob/kos/Provincia/Madrid/Municipio/Madrid/Distrito/Tetuan/Barrio/Almenara</area>
+						<timetable>
+							<start>2022-05-27 19:00:00.0</start>
+							<end>2022-05-27 23:59:00.0</end></timetable>
+						<georeference>40.46903299144094 -3.6976620067964996</georeference>
+				</location>
+				<organization>
+						<accesibility>1</accesibility>
+						<organizationName>Centro Cultural Eduardo Úrculo (Tetuán)</organizationName>
+				</organization>
+				<description>a cargo de la compañía de danza 'Las Artes'. Relato a través del lenguaje de la danza neoclásica la vida y los sentimientos de la grandísima diseñadora Coco Chanel, desde su humilde origen hasta llegar a lo más alto del mundo de la moda, resaltando su papel pionero en el camino de la emancipación de la mujer y la soledad que la acompañó siempre en su vida personal. Música: Chopin, Gershwin, Faure. Duración: 60 min. Edad recomendada: todos los públicos</description>
+			</resource>
+			<resource id="https://datos.madrid.es/egob/catalogo/206974-0-agenda-eventos-culturales-100.json">
+				<concept id="https://datos.madrid.es/egob/kos/actividades/DanzaBaile"/>
+				<link><![CDATA[http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=531211a3cf640810VgnVCM1000001d4a900aRCRD]]></link>
+				<title>COMPETICIÓN BEATBOX URBAN FEST</title>
+				<location>
+						<eventLocation>Centro Juvenil El Sitio de mi Recreo (Villa de Vallecas)</eventLocation>
+						<area>https://datos.madrid.es/egob/kos/Provincia/Madrid/Municipio/Madrid/Distrito/VillaDeVallecas/Barrio/SantaEugenia</area>
+						<timetable>
+							<start>2022-05-28 12:00:00.0</start>
+							<end>2022-05-28 23:59:00.0</end></timetable>
+						<georeference>40.37953682427198 -3.616901585603186</georeference>
+				</location>
+				<organization>
+						<accesibility>1</accesibility>
+						<organizationName>Centro Juvenil El Sitio de mi Recreo (Villa de Vallecas)</organizationName>
+				</organization>
+				<description>Tenemos la suerte de contar con la colaboración de MADRIZ BEATS, plataforma de Beat Box de referencia nacional. que nos ofrecen la oportunidad de realizar la final del campeonato Madriz Beats League, que ofrece un formato revolucionario de competición fundado por la plataforma que trata de buscar al beatboxer más completo. Competición que reúne a algunos de los mejores beatboxers nacionales de la actualidad y que abrirán las actuaciones de la tarde del sábado.  Fecha y hora de celebración: Sábado 28 de mayo de 2022, de 12.00 a 13.00 horas  Periodo inscripción: ﻿Hasta completar plazas. Inscripciones en www.bit.ly/inscripcioncj   Plazas: ﻿ 50% de aforo de los espacios</description>
+			</resource>
+			<resource id="https://datos.madrid.es/egob/catalogo/300107-0-agenda-actividades-eventos.json">
+				<concept id="https://datos.madrid.es/egob/kos/actividades/DanzaBaile"/>
+				<link><![CDATA[http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=0e98071c7810f710VgnVCM1000001d4a900aRCRD]]></link>
+				<title>Antonio Gades. Tierra, mar y fuego</title>
+				<location>
+						<eventLocation>Fernán Gómez Centro Cultural de la Villa</eventLocation>
+						<area>https://datos.madrid.es/egob/kos/Provincia/Madrid/Municipio/Madrid/Distrito/Salamanca/Barrio/Recoletos</area>
+						<timetable>
+							<start>2022-04-07 00:00:00.0</start>
+							<end>2022-05-29 23:59:00.0</end></timetable>
+						<georeference>40.424926347610764 -3.6899208519663427</georeference>
+				</location>
+				<organization>
+						<accesibility>1,6</accesibility>
+						<organizationName>Fernán Gómez Centro Cultural de la Villa</organizationName>
+				</organization>
+				<description></description>
+			</resource>
+			<resource id="https://datos.madrid.es/egob/catalogo/300107-0-agenda-actividades-eventos.json">
+				<concept id="https://datos.madrid.es/egob/kos/actividades/DanzaBaile"/>
+				<link><![CDATA[http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=8ad33b799879f710VgnVCM1000001d4a900aRCRD]]></link>
+				<title>Aprende a bailar Marinera</title>
+				<location>
+						<eventLocation>Centro Cultural Antonio Machado (San Blas - Canillejas)</eventLocation>
+						<area>https://datos.madrid.es/egob/kos/Provincia/Madrid/Municipio/Madrid/Distrito/SanBlas-Canillejas/Barrio/Arcos</area>
+						<timetable>
+							<start>2022-04-02 00:00:00.0</start>
+							<end>2022-06-25 23:59:00.0</end></timetable>
+						<georeference>40.42027705095574 -3.621741078700336</georeference>
+				</location>
+				<organization>
+						<accesibility>1</accesibility>
+						<organizationName>Centro Cultural Antonio Machado (San Blas - Canillejas)</organizationName>
+				</organization>
+				<description></description>
+			</resource>
+			<resource id="https://datos.madrid.es/egob/catalogo/300107-0-agenda-actividades-eventos.json">
+				<concept id="https://datos.madrid.es/egob/kos/actividades/DanzaBaile"/>
+				<link><![CDATA[http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=2c4b04ae21f60810VgnVCM1000001d4a900aRCRD]]></link>
+				<title>Caamaño y Amexeiras</title>
+				<location>
+						<eventLocation>Centro Cultural el Torito (Moratalaz)</eventLocation>
+						<area>https://datos.madrid.es/egob/kos/Provincia/Madrid/Municipio/Madrid/Distrito/Moratalaz/Barrio/Vinateros</area>
+						<timetable>
+							<start>2022-05-20 19:00:00.0</start>
+							<end>2022-05-20 23:59:00.0</end></timetable>
+						<georeference>40.40609591857167 -3.646536107063507</georeference>
+				</location>
+				<organization>
+						<accesibility>1</accesibility>
+						<organizationName>Centro Cultural el Torito (Moratalaz)</organizationName>
+				</organization>
+				<description>Formado por Sabela Caamaño (acordeón cromático) y Antía Ameixeiras (violín y voz) en 2018, este dúo acumula, en su corta pero intensa trayectoria, un gran número de conciertos, tanto dentro de la geografía gallega, su lugar de origen, como fuera de ella y en el ámbito internacional. Organiza 21 Distritos.</description>
+			</resource>
+			<resource id="https://datos.madrid.es/egob/catalogo/300107-0-agenda-actividades-eventos.json">
+				<concept id="https://datos.madrid.es/egob/kos/actividades/DanzaBaile"/>
+				<link><![CDATA[http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=4865948872400810VgnVCM1000001d4a900aRCRD]]></link>
+				<title>Cesc Gelabert… al descubierto</title>
+				<location>
+						<eventLocation>Espacio Abierto Quinta de los Molinos</eventLocation>
+						<area>https://datos.madrid.es/egob/kos/Provincia/Madrid/Municipio/Madrid/Distrito/SanBlas-Canillejas/Barrio/ElSalvador</area>
+						<timetable>
+							<start>2022-06-04 00:00:00.0</start>
+							<end>2022-06-05 23:59:00.0</end></timetable>
+						<georeference>40.44774002225867 -3.6292874542291638</georeference>
+				</location>
+				<organization>
+						<accesibility>1,6</accesibility>
+						<organizationName>Espacio Abierto Quinta de los Molinos</organizationName>
+				</organization>
+				<description></description>
+			</resource>
+			<resource id="https://datos.madrid.es/egob/catalogo/300107-0-agenda-actividades-eventos.json">
+				<concept id="https://datos.madrid.es/egob/kos/actividades/DanzaBaile"/>
+				<link><![CDATA[http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=ba82ab218c42d710VgnVCM1000001d4a900aRCRD]]></link>
+				<title>Cirque du Soleil vuelve al Escenario Puerta del Ángel</title>
+				<location>
+						<eventLocation>Empresa Municipal Madrid Destino Cultura Turismo y Negocio, S.A</eventLocation>
+						<area>https://datos.madrid.es/egob/kos/Provincia/Madrid/Municipio/Madrid/Distrito/Centro/Barrio/Universidad</area>
+						<timetable>
+							<start>2022-11-05 00:00:00.0</start>
+							<end>2022-11-27 23:59:00.0</end></timetable>
+						<georeference>40.4273956914461 -3.7106000903599745</georeference>
+				</location>
+				<organization>
+						<accesibility>1</accesibility>
+						<organizationName>Empresa Municipal Madrid Destino Cultura Turismo y Negocio, S.A</organizationName>
+				</organization>
+				<description></description>
+			</resource>
+		</resources>
+	</results>
+</searchResults>
