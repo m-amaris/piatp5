@@ -1,0 +1,25 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}",
+            "args": "catalogo\\catalogo.xml 018 catalogo\\output.xml catalogo\\output.json",
+            "console": "externalTerminal"
+        },
+        {
+            "type": "java",
+            "name": "Launch P4_JSON",
+            "request": "launch",
+            "mainClass": "piat.opendatasearch.P4_JSON",
+            "projectName": "P4_JSON_6952a034",
+            "args": "catalogo\\catalogo.xml 018 catalogo\\output.xml catalogo\\output.json",
+            "console": "externalTerminal"
+        }
+    ]
+}
