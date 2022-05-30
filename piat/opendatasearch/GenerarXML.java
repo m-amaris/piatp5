@@ -1,6 +1,10 @@
 package piat.opendatasearch;
 
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
@@ -85,7 +89,12 @@ public class GenerarXML {
 		sbSalida.append("\n\t</results>\n</searchResults>");
 
 		try {
-			Files.write(path, sbSalida.toString().getBytes());
+			//Files.write(path, sbSalida.toString().getBytes());
+
+			Writer out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path.toString()), "UTF-8"));
+			out.write(sbSalida.toString());
+			out.close();
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

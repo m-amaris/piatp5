@@ -1,6 +1,9 @@
 package piat.opendatasearch;
 
+import java.io.FileOutputStream;
 import java.io.FileWriter;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.util.List;
 
@@ -63,10 +66,15 @@ public class GenerarJSON {
 
             // Creamos el GSON BUILDER para escribirlo en el fichero
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            PrintWriter out = new PrintWriter(new FileWriter(path));
-            out.write(gson.toJson(json));
-            out.close();
+            // PrintWriter out = new PrintWriter(new FileWriter(path));
+            // out.write(gson.toJson(json));
+            // out.close();
 
+
+            OutputStream os = new FileOutputStream(path.toString());
+            PrintWriter pw = new PrintWriter(new OutputStreamWriter(os, "UTF-8"));
+            pw.write(gson.toJson(json));
+            pw.close();
 
         } catch (Exception e) {
             e.printStackTrace();
