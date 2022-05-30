@@ -24,7 +24,7 @@ hs_err_pid*
 
 #*.vscode
 lib/
-catalogo/catalogo.xml
+#catalogo/catalogo.xml
 catalogo/salida*
-*.xsd
+#*.xsd
 bin/
