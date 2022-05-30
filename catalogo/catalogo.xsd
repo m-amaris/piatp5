@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+		targetNamespace="http://www.piat.upm.es/catalogo" 
+		xmlns:tns="http://www.piat.upm.es/catalogo" 
+		elementFormDefault="qualified">
+	
+<xsd:element name="catalog">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="tns:concepts" />
+			<xsd:element ref="tns:datasets" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:key name="keyConcept">		
+		<xsd:selector xpath="./tns:concepts/tns:concept/tns:concepts/tns:concept/tns:concepts/tns:concept | ./tns:concepts/tns:concept/tns:concepts/tns:concept | ./tns:concepts/tns:concept "/>
+		<xsd:field xpath="@id"/>
+	</xsd:key>
+	 
+	<xsd:keyref name="refDSConcept" refer="tns:keyConcept">
+		<xsd:selector xpath="./tns:datasets/tns:dataset/tns:concepts/tns:concept" />
+		<xsd:field xpath="@id" />
+	</xsd:keyref>
+	
+	<xsd:key name="keyConceptCod">
+		<xsd:selector xpath=".//tns:code"/>
+		<xsd:field xpath="."/>
+	</xsd:key>
+</xsd:element>
+	
+<xsd:element name="concepts">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="concept" type="tns:tConcept" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+<!-- 
+	<xsd:key name="keyConceptCod">
+		<xsd:selector xpath=" ./tns:concept/tns:concepts/tns:concept/tns:concepts/tns:concept/tns:concepts/tns:concept | ./tns:concept/tns:concepts/tns:concept/tns:concepts/tns:concept  | ./tns:concept/tns:concepts/tns:concept | ./tns:concept   "/>
+		<xsd:field xpath="./tns:code"/>
+	</xsd:key>
+	-->
+
+	
+</xsd:element>
+		
+<xsd:complexType name="tConcept">
+	<xsd:sequence>
+		<xsd:element name="code" type="xsd:string"/>
+		<xsd:element name="label" type="xsd:string"/>
+		<xsd:element ref="tns:concepts" minOccurs="0"/>
+	</xsd:sequence>
+	<xsd:attribute name="id" type="xsd:anyURI"/>
+</xsd:complexType>
+
+
+<xsd:element name="datasets">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="dataset" type="tns:tDataset" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:key name="keyDataset">
+		<xsd:selector xpath="./tns:dataset"/>
+		<xsd:field xpath="@id"/>
+	</xsd:key>
+	
+</xsd:element>
+
+<xsd:complexType name="tDataset">
+	<xsd:sequence>
+		<xsd:element name="title" type="xsd:string" />
+		<xsd:element name="description" type="xsd:string" minOccurs="0" />
+		<xsd:element name="keyword" type="xsd:string" minOccurs="0"/>
+		<xsd:element name="theme" type="xsd:string" minOccurs="0"/>
+		<xsd:element name="publisher" type="xsd:string" minOccurs="0"/>
+		<xsd:element name="concepts" minOccurs="0">
+			<xsd:complexType>
+				<xsd:sequence>
+					<xsd:element name="concept" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:attribute name="id" type="xsd:anyURI"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			
+			<xsd:key name="keyDatasetConcept">
+				<xsd:selector xpath="./tns:concept"/>
+				<xsd:field xpath="@id"/>
+			</xsd:key>
+		</xsd:element>		
+	</xsd:sequence>
+	<xsd:attribute name="id" type="xsd:anyURI"/>
+</xsd:complexType>
+
+		
+</xsd:schema>

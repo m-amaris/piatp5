@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ 			targetNamespace="http://www.piat.dte.upm.es/practica4" 
+ 			xmlns:tns="http://www.piat.dte.upm.es/practica4" 
+ 			elementFormDefault="qualified">
+	<xsd:element name="searchResults">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="summary" type="tns:tSummary"/>
+				<xsd:element name="results" type="tns:tResults" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+			
+	<xsd:complexType name="tSummary">
+		<xsd:sequence>
+			<xsd:element name="query" type="xsd:token">
+				<xsd:annotation>
+					<xsd:documentation>
+						Término de búsqueda (código de concepto)
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+
+			<xsd:element name="numConcepts" type="xsd:nonNegativeInteger">
+				<xsd:annotation>
+					<xsd:documentation>
+						Número de 'concept' pertinentes.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+
+			<xsd:element name="numDatasets" type="xsd:token">
+				<xsd:annotation>
+					<xsd:documentation>
+						Número de 'dataset' pertinentes.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+		
+	<xsd:complexType name="tResults">
+		<xsd:sequence>
+			<xsd:element ref="tns:concepts" minOccurs="0"/>
+			<xsd:element ref="tns:datasets" minOccurs="0"/>
+			<xsd:element ref="tns:resources" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+					
+			
+	<!--  **********************  CONCEPTS **********************  -->
+	<xsd:element name="concepts" type="tns:tConcepts">
+		<xsd:annotation>
+			<xsd:documentation>
+				Elemento que se corresponde con el fragmento de
+				documento resultante de la serialización de la información devuelta
+				por el método 'getConcepts' de la clase 'ManejadorXML'.
+			</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:key name="keyConcept">
+			<xsd:selector xpath=".//tns:concept" />
+			<xsd:field xpath="@id" />
+		</xsd:key>
+	</xsd:element>
+		
+	<xsd:complexType name="tConcepts">
+			<xsd:sequence>
+				<xsd:element name="concept" type="tns:tConcept" maxOccurs="unbounded">
+					<xsd:annotation>
+						<xsd:documentation>
+							Trasformación de elemento 'concept' pertinente al término de búsqueda. 
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="tConcept">
+		<xsd:attribute name="id" type="xsd:anyURI" >
+			<xsd:annotation>
+				<xsd:documentation>
+					Valor de cadena del atributo 'id' del elemento 'concept' a transformar
+				</xsd:documentation>
+			</xsd:annotation>			
+		
+		</xsd:attribute>
+	</xsd:complexType>
+	
+	
+	<!--  ********************** DATASETS **********************  -->
+	<xsd:element name="datasets" type="tns:tDatasets" >
+		<xsd:key name="keyDataset">
+			<xsd:selector xpath=".//tns:dataset" />
+			<xsd:field xpath="@id" />
+		</xsd:key>				
+	</xsd:element>
+
+	<xsd:complexType name="tDatasets">
+		<xsd:sequence>
+			<xsd:element name="dataset" type="tns:tDataset" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>
+						Fragmento de documento resultante de la serialización de la información
+						devuelta por el método 'getDatasets' de la clase 'ManejadorXML'.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>	
+	</xsd:complexType>
+
+	<xsd:complexType name="tDataset">
+		<xsd:sequence>
+			<xsd:element name="title" type="xsd:string" >
+				<xsd:annotation>
+					<xsd:documentation>
+						Valor de cadena del elemento 'title' del elemento 'dataset' a transformar 
+					</xsd:documentation>
+				</xsd:annotation>			
+			</xsd:element>
+			<xsd:element name="description" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						Valor de cadena del elemento 'description' del elemento 'dataset' a transformar 
+					</xsd:documentation>
+				</xsd:annotation>			
+			</xsd:element>
+			<xsd:element name="theme" type="xsd:anyURI" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						Valor de cadena del elemento 'theme' del elemento 'dataset' a transformar 
+					</xsd:documentation>
+				</xsd:annotation>			
+			</xsd:element>			
+		</xsd:sequence>	
+		<xsd:attribute name="id" type="xsd:anyURI">
+			<xsd:annotation>
+				<xsd:documentation>
+					Valor del atributo 'id' del 'dataset' a transformar
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+
+
+	<!-- ********************** RESOURCES ********************** -->
+	<xsd:element name="resources">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="resource" type="tns:tResource"
+					minOccurs="1" maxOccurs="unbounded">
+					<xsd:annotation>
+						<xsd:documentation>
+							Elemento resultante de la transformación de un objeto del array '@graph'
+							del documento origen JSON del 'dataset'.
+							Únicamente deberán ser transformados aquellos objetos cuyo valor de la
+							propiedad '@type' se corresponda el 'id' de uno de los 'concept' relevantes.
+							De cada documento JSON se transformarán un máximo de 5 objetos cuyo @id tiene que ser
+							diferente.
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>	
+			</xsd:sequence>
+		</xsd:complexType>
+		</xsd:element>
+
+	<xsd:complexType name="tResource">
+		<xsd:sequence>
+			<xsd:element ref="tns:concept" />
+			<xsd:element ref="tns:link" minOccurs="0"/>
+			<xsd:element ref="tns:title" />
+			<xsd:element ref="tns:location" />
+			<xsd:element ref="tns:organization" minOccurs="0"/>
+			<xsd:element ref="tns:description" minOccurs="0"/>			
+		</xsd:sequence>
+	
+		<xsd:attribute name="id" type="xsd:anyURI" use="required">
+			<xsd:annotation>
+				<xsd:documentation>
+					Valor del atributo 'id' del 'dataset' origen. Es decir, la url del documento JSON 
+					que se está transformando.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:element name="concept">
+	<xsd:complexType>
+		<xsd:attribute name="id" type="xsd:anyURI" use="required">
+			<xsd:annotation>
+				<xsd:documentation>
+					Valor de la propiedad '@type' del objeto a transformar.							
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="link" type="xsd:string">
+		<xsd:annotation>
+			<xsd:documentation>
+				Valor de la propiedad 'link' o de la propiedad 'relation' del objeto a transformar.							
+				En caso de existir las dos propiedades tomar el valor de la propiedad 'link'.
+				Su contenido debe aparecer dentro de '<![CDATA[  ]]>'
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="title" type="xsd:string">
+		<xsd:annotation>
+			<xsd:documentation>
+				Valor de la propiedad 'title' del objeto a transformar.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="location">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="eventLocation" type="xsd:string" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>
+							Valor de la propiedad 'event-location' del objeto a transformar
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="area" type="xsd:anyURI" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>
+							Valor de la propiedad '@id' del objeto 'address/area' del objeto transformar
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="timetable" type="tns:tTimetable"></xsd:element>
+				<xsd:element name="georeference" type="tns:tGeoReference" minOccurs="0"/>				
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="organization">
+		<xsd:complexType>
+			<xsd:sequence>			
+				<xsd:element name="accesibility" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>
+							Valor de la propiedad 'accesibility' del objeto 'organization' del objeto a transformar.
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>		
+				<xsd:element name="organizationName" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>
+							Valor de la propiedad 'organization-name' del objeto 'organization' del objeto a transformar.
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>					
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="description" type="xsd:string">
+		<xsd:annotation>
+			<xsd:documentation>
+				Valor de la propiedad 'description' del objeto a transformar		
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:complexType name="tTimetable">
+		<xsd:sequence>			
+				<xsd:element name="start" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>
+							Valor de la propiedad 'dtstart' del objeto a transformar.
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>		
+				<xsd:element name="end" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>
+							Valor de la propiedad 'dtend' del objeto a transformar.
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>					
+			</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="tGeoList">
+		<xsd:list itemType="xsd:double"/>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="tGeoReference">
+		<xsd:annotation>
+			<xsd:documentation>
+				El primer valor de la lista es la propiedad 'latitude' del objeto 'location'.
+				El segundo valor de la lista es la propiedad 'longitude' del objeto 'location'.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="tns:tGeoList">
+			<xsd:length value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+</xsd:schema>
